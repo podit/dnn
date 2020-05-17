@@ -17,7 +17,7 @@ The activations of the hidden and output layers can be set after initialisation 
 - Reads files from 'data' directory
   * Get data and decompress manually from:
       http://yann.lecun.com/exdb/mnist/
-  * Run script which comes with `python_mnist`:
+  * Run script which comes with `python-mnist`:
       - Depending on root or user pip install path:
           * `/bin/mnist_get_data.sh`
           * `~/.local/bin/mnist_get_data.sh`
@@ -40,4 +40,4 @@ This is designed for use with the `multiprocessing` python module and does so th
 The debug experiment script (`runDnnDebug.py`) is a CPU implementation without the use of multiprocessing, to allow for `print` and `input` statements to be used for bug-fixing.
 
 ## Cupy GPU implementation
-[Cupy](https://cupy.chainer.org/) is an implementation of Numpy utilising the CUDA tool-kit. This allows for a much higher throughput of calculations when using larger networks, although for efficient execution all data must be initially loaded into the GPU meaning that this implementation is very dependent in the available VRAM. Cupy doesn't play nicely with multiprocessing and so a multi-threaded implementation of this isn't likely to be possible (let me know of you manage to do it). Although with the usage profile of _my_ GPU it doesn't appear it would help but I could see it being so for much larger networks.
+[Cupy](https://cupy.chainer.org/) is an implementation of Numpy utilising the CUDA toolkit. This allows for a much higher throughput of calculations when using larger networks, although for efficient execution all data must be initially loaded into the GPU meaning that this implementation is very dependent in the available VRAM. Cupy doesn't play nicely with multiprocessing and so a multi-threaded implementation of this isn't likely to be possible (let me know of you manage to do it). Although with the usage profile of _my_ GPU it doesn't appear it would help but I could see it being so for much larger networks.
