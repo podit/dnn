@@ -259,6 +259,7 @@ print('Val loss: minimum = %.5f final = %.5f'% (traceVal.min(), traceVal[-1]))
 print('Accuracy: maximum = %.5f final = %.5f'% (traceAcc.max(), traceAcc[-1]))
 # Test accuracies
 print('Test acc: ', score, '/', rngTs, '\t', (score/rngTs))
+# TODO: Not necessarily the same number of samples per digit, check this
 print('Digit classification accuracies (0-9):\n', [c/(rngTs/10) for c in corr])
 # Network parameters and architecture
 print('Learning rate =', stochasticLearningRate, 'to',
