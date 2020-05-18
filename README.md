@@ -59,7 +59,7 @@ Weights = [(400, 784), (200, 400), (10, 200)]
 ![Example training profile](https://github.com/podit/dnn/blob/master/example.png)
 
 <p align="center">
-Training ( *blue* ) and validation ( *orange* ) loss, classification accuracy ( *green* ).
+Training (blue) and validation (orange) loss, classification accuracy (green).
 </p>
 
 ## Cupy GPU implementation
