@@ -58,5 +58,9 @@ Weights = [(400, 784), (200, 400), (10, 200)]
 
 ![Example training profile](https://github.com/podit/dnn/blob/master/example.png)
 
+<p align="center">
+Training (_blue_) and validation (_orange) loss, classification accuracy (_green).
+</p>
+
 ## Cupy GPU implementation
 [Cupy](https://cupy.chainer.org/) is an implementation of Numpy utilising the CUDA toolkit. This allows for a much higher throughput of calculations when using larger networks, although for efficient execution all data must be initially loaded into the GPU meaning that this implementation is very dependent in the available VRAM. Cupy doesn't play nicely with multiprocessing and so a multi-threaded implementation of this isn't likely to be possible (let me know of you manage to do it). Although with the usage profile of _my_ GPU it doesn't appear it would help but I could see it being so for much larger networks.
