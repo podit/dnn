@@ -39,5 +39,24 @@ This is designed for use with the `multiprocessing` python module and does so th
 
 The debug experiment script (`runDnnDebug.py`) is a CPU implementation without the use of multiprocessing, to allow for `print` and `input` statements to be used for bug-fixing.
 
+### Example
+```
+Execution time: 1.76h
+Trn loss: minimum = 0.22057 final = 0.25162
+Val loss: minimum = 0.39800 final = 0.39820
+Accuracy: maximum = 0.75840 final = 0.75760
+Test acc:  7576 / 10000 	0.7576
+Digit classification accuracies (0-9):
+ [0.806, 1.06, 0.749, 0.75, 0.712, 0.519, 0.742, 0.842, 0.672, 0.724]
+Learning rate = 0.001 to 1e-05 Batch size = 100
+Hidden Layers = 2
+Nodes = [784, 400, 200, 10] 
+	Total Nodes = 1394
+Weights = [(400, 784), (200, 400), (10, 200)] 
+	Total Weights = 395600
+```
+
+![Example training profile](https://github.com/podit/dnn/blob/master/example.png)
+
 ## Cupy GPU implementation
 [Cupy](https://cupy.chainer.org/) is an implementation of Numpy utilising the CUDA toolkit. This allows for a much higher throughput of calculations when using larger networks, although for efficient execution all data must be initially loaded into the GPU meaning that this implementation is very dependent in the available VRAM. Cupy doesn't play nicely with multiprocessing and so a multi-threaded implementation of this isn't likely to be possible (let me know of you manage to do it). Although with the usage profile of _my_ GPU it doesn't appear it would help but I could see it being so for much larger networks.
