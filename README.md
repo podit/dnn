@@ -56,7 +56,7 @@ Weights = [(400, 784), (200, 400), (10, 200)]
 	Total Weights = 395600
 ```
 
-![Example training profile](https://github.com/podit/dnn/blob/master/example.png)
+![Example training profile](example.png)
 
 <p align="center">
 Training (blue) and validation (orange) loss, classification accuracy (green).
