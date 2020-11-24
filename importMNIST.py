@@ -14,13 +14,13 @@ class imp:
     def __init__(self):
         from mnist import MNIST
         self.mndata = MNIST('data')
-    
+
     # Take lists from python_mnist and create numpy arrays of data
     def preProc(self, images, labels, vanishingMean, twoD):
         import numpy as np
         # Create numpy arrays from image data
         imgs = np.array(images, dtype=np.float32)
-        
+
         # Normalise image data
         if vanishingMean: imgs = (imgs / 127.5)
         else: imgs = imgs / 255
@@ -42,5 +42,4 @@ class imp:
         images, labels = self.mndata.load_testing()
         imgsTest, labsTest = self.preProc(images, labels, vanishingMean, twoD)
         return(imgsTest, labsTest)
-
 
